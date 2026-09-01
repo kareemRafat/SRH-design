@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { PageHero } from '../../components/layout/PageHero'
 import { Reveal } from '../../components/layout/Reveal'
 import { Seo } from '../../components/seo/Seo'
@@ -7,11 +6,6 @@ import { useLanguage } from '../../hooks/useLanguage'
 
 export function JoinPage() {
   const { t, lang } = useLanguage()
-  const [openFaq, setOpenFaq] = useState<number | null>(null)
-
-  const toggleFaq = (index: number) => {
-    setOpenFaq(openFaq === index ? null : index)
-  }
 
   const PILLARS = [
     {
@@ -161,33 +155,6 @@ export function JoinPage() {
     },
   ]
 
-  const FAQS = [
-    {
-      qAr: 'كيف تتم مراجعة ومتابعة طلبات التوظيف؟',
-      qEn: 'How are job applications reviewed and tracked?',
-      aAr: 'يقوم فريق الموارد البشرية بفحص كافة السير الذاتية الواردة وحفظها في قاعدة بيانات الكفاءات، ويتم التواصل فوراً مع المرشحين المناسبين عند توفر الشواغر.',
-      aEn: 'Our HR team thoroughly reviews all submitted applications and saves them in our talent database. Selected candidates are contacted directly as matching opportunities arise.',
-    },
-    {
-      qAr: 'هل تقبلون متقدمين من خارج المملكة العربية السعودية؟',
-      qEn: 'Do you accept applicants outside Saudi Arabia?',
-      aAr: 'نعم، نرحب بالكفاءات والخبرات المتميزة من السعودية، الإمارات، مصر ومختلف الدول، حسب متطلبات كل شاغر وظيفي.',
-      aEn: 'Yes, we welcome top talent and seasoned professionals from Saudi Arabia, the UAE, Egypt, and internationally based on the requirements of each role.',
-    },
-    {
-      qAr: 'هل توفر الشركة برامج تدريب وتأهيل للكفاءات الجديدة؟',
-      qEn: 'Does the company offer training and onboarding programs?',
-      aAr: 'بالتأكيد، توفر SRH برامج تدريب وتطوير مستمرة في المجالات الفنية، الهندسية، الإدارية، والسلامة المهنية بالتعاون مع كبرى الشركات العالمية.',
-      aEn: 'Absolutely. SRH provides comprehensive training, technical development, and safety certification programs in partnership with leading global manufacturers.',
-    },
-    {
-      qAr: 'ما هي صيغ الملفات المقبولة لرفع السيرة الذاتية؟',
-      qEn: 'What file formats are accepted for CV uploads?',
-      aAr: 'نقبل صيغ PDF و DOC و DOCX بحجم أقصى 10 ميجابايت لضمان وضوح وسهولة قراءة بياناتك.',
-      aEn: 'We accept PDF, DOC, and DOCX formats up to 10MB to ensure smooth and accurate review of your credentials.',
-    },
-  ]
-
   return (
     <>
       <Seo titleKey="seo.title.join" descriptionKey="seo.description" />
@@ -251,7 +218,7 @@ export function JoinPage() {
                   {t('joinPage.kicker')}
                 </p>
                 <h2 id="join-intro-heading" className="section-title text-navy-6 dark:text-white mb-6">
-                  {t('joinPage.intro.title')} <span className="text-gold-5">{t('joinPage.intro.span')}</span>
+                  {t('joinPage.intro.title')} <span className="text-gold-5 my-4">{t('joinPage.intro.span')}</span>
                 </h2>
 
                 {/* Primary Intro Quote Box */}
@@ -265,7 +232,7 @@ export function JoinPage() {
                 </div>
 
                 {/* Quick stats / Highlights */}
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-2">
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-6">
                   <div className="p-4 rounded-xl bg-white dark:bg-slate-8 border border-slate-0 dark:border-slate-7">
                     <p className="text-2xl font-bold text-gold-5">+100</p>
                     <p className="text-xs text-slate-4 dark:text-slate-3 font-medium mt-1">
@@ -294,16 +261,16 @@ export function JoinPage() {
       {/* Pillars / Culture Section */}
       <section className="inner-section is-soft py-16 sm:py-24" aria-labelledby="join-pillars-heading">
         <div className="site-shell">
-          <Reveal className="text-center max-w-3xl mx-auto mb-14">
+          <Reveal className="mb-14">
             <p className="text-gold-5 font-semibold text-sm tracking-wide uppercase mb-2">
               {t('joinPage.pillars.kicker')}
             </p>
             <h2 id="join-pillars-heading" className="section-title text-navy-6 dark:text-white">
-              {t('joinPage.pillars.title')} <span>{t('joinPage.pillars.span')}</span>
+              {t('joinPage.pillars.title')} <span className='my-4'>{t('joinPage.pillars.span')}</span>
             </h2>
           </Reveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {PILLARS.map((pillar, i) => (
               <Reveal key={pillar.titleKey} variant="zoom">
                 <div className="h-full bg-white dark:bg-slate-8 rounded-2xl p-6 sm:p-8 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-slate-0 dark:border-slate-7 flex flex-col justify-between group">
@@ -329,92 +296,34 @@ export function JoinPage() {
         </div>
       </section>
 
-      {/* Departments Showcase Section */}
-      <section className="inner-section py-16 sm:py-24" aria-labelledby="join-depts-heading">
+      {/* Career Paths / Departments */}
+      <section className="inner-section is-soft py-16 sm:py-20" aria-labelledby="join-depts-heading">
         <div className="site-shell">
-          <Reveal className="text-center max-w-3xl mx-auto mb-14">
+          <Reveal className="mb-14">
             <p className="text-gold-5 font-semibold text-sm tracking-wide uppercase mb-2">
               {t('joinPage.departments.kicker')}
             </p>
-            <h2 id="join-depts-heading" className="section-title text-navy-6 dark:text-white mb-4">
-              {t('joinPage.departments.title')} <span>{t('joinPage.departments.span')}</span>
+            <h2 id="join-depts-heading" className="section-title text-navy-6 dark:text-white">
+              {t('joinPage.departments.title')} <span className='my-4'>{t('joinPage.departments.span')}</span>
             </h2>
-            <p className="text-slate-4 dark:text-slate-3 text-base">
-              {t('joinPage.departments.subtitle')}
-            </p>
           </Reveal>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {DEPARTMENTS.map((dept) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 relative">
+            {DEPARTMENTS.map((dept, index) => (
               <Reveal key={dept.key}>
-                <div className="bg-slate-0/50 dark:bg-slate-8/60 hover:bg-white dark:hover:bg-slate-8 rounded-2xl p-6 border border-slate-1/40 dark:border-slate-7 hover:border-gold-4/50 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col h-full group">
-                  <div className="w-12 h-12 rounded-xl bg-navy-4/10 dark:bg-white/5 text-navy-4 dark:text-gold-4 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                    {dept.icon}
-                  </div>
-                  <h3 className="text-base font-bold text-navy-6 dark:text-white mb-2">
-                    {t(dept.titleKey)}
-                  </h3>
-                  <p className="text-xs sm:text-sm text-slate-4 dark:text-slate-3 leading-relaxed mt-auto">
-                    {t(dept.descKey)}
-                  </p>
-                </div>
-              </Reveal>
-            ))}
-
-            {/* General Open Talent Card */}
-            <Reveal>
-              <div className="bg-gradient-to-br from-navy-5 to-navy-7 text-white rounded-2xl p-6 border border-gold-5/30 shadow-md flex flex-col justify-between h-full">
-                <div>
-                  <div className="w-12 h-12 rounded-xl bg-gold-5 text-navy-7 flex items-center justify-center mb-4 font-bold">
-                    SRH
-                  </div>
-                  <h3 className="text-base font-bold text-white mb-2">
-                    {lang === 'ar' ? 'كافة التخصصات والكفاءات' : 'All Disciplines & Roles'}
-                  </h3>
-                  <p className="text-xs sm:text-sm text-slate-1 leading-relaxed">
-                    {lang === 'ar'
-                      ? 'نرحب دائماً بالمواهب الاستثنائية التي ترغب في مشاركتنا قصة النجاح.'
-                      : 'We continuously welcome extraordinary minds wanting to be part of our success story.'}
-                  </p>
-                </div>
-                <div className="mt-4 pt-4 border-t border-white/10 text-xs text-gold-4 font-medium flex items-center gap-1">
-                  <span>{lang === 'ar' ? 'قدّم طلبك بالأسفل' : 'Apply below'}</span>
-                  <span>&darr;</span>
-                </div>
-              </div>
-            </Reveal>
-          </div>
-        </div>
-      </section>
-
-      {/* Hiring Journey / Steps */}
-      <section className="inner-section is-soft py-16 sm:py-20" aria-labelledby="join-steps-heading">
-        <div className="site-shell">
-          <Reveal className="text-center max-w-3xl mx-auto mb-14">
-            <p className="text-gold-5 font-semibold text-sm tracking-wide uppercase mb-2">
-              {t('joinPage.steps.kicker')}
-            </p>
-            <h2 id="join-steps-heading" className="section-title text-navy-6 dark:text-white">
-              {t('joinPage.steps.title')} <span>{t('joinPage.steps.span')}</span>
-            </h2>
-          </Reveal>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative">
-            {STEPS.map((step) => (
-              <Reveal key={step.num}>
                 <div className="bg-white dark:bg-slate-8 rounded-2xl p-6 border border-slate-0 dark:border-slate-7 shadow-sm h-full flex flex-col justify-between relative overflow-hidden group">
-                  <span className="absolute -top-4 -end-3 text-6xl font-black text-slate-0/70 dark:text-slate-7/50 select-none pointer-events-none group-hover:text-gold-4/15 transition-colors">
-                    {step.num}
+                  <span className="absolute -top-3 -end-1 text-6xl font-black text-slate-0/70 dark:text-slate-7/50 select-none pointer-events-none group-hover:text-gold-4/15 transition-colors">
+                    {String(index + 1).padStart(2, '0')}
                   </span>
                   <div>
-                    <span className="inline-block px-3 py-1 rounded-full bg-gold-4/15 text-gold-6 dark:text-gold-4 text-xs font-bold mb-4">
-                      {lang === 'ar' ? `المرحلة ${step.num}` : `Stage ${step.num}`}
-                    </span>
+                    <div className="w-12 h-12 rounded-xl bg-navy-4/10 dark:bg-white/5 text-navy-4 dark:text-gold-4 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                      {dept.icon}
+                    </div>
                     <h3 className="text-base font-bold text-navy-6 dark:text-white mb-2">
-                      {t(step.titleKey)}
+                      {t(dept.titleKey)}
                     </h3>
                     <p className="text-xs sm:text-sm text-slate-4 dark:text-slate-3 leading-relaxed">
-                      {t(step.descKey)}
+                      {t(dept.descKey)}
                     </p>
                   </div>
                 </div>
@@ -424,185 +333,96 @@ export function JoinPage() {
         </div>
       </section>
 
-      {/* Application Form Section with Encouraging Banner */}
+      {/* Application Form Section */}
       <section id="application-form" className="inner-section py-16 sm:py-24" aria-labelledby="join-form-heading">
         <div className="site-shell">
-          {/* Encouraging Banner (Requested specifically by user) */}
-          <Reveal className="mb-12">
-            <div className="relative rounded-3xl overflow-hidden bg-gradient-to-r from-navy-6 via-navy-5 to-navy-7 p-8 sm:p-12 text-white border border-gold-5/40 shadow-2xl">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(231,159,56,0.18),transparent_60%)] pointer-events-none"></div>
-              <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
-                <div className="flex items-start sm:items-center gap-5">
-                  <div className="w-16 h-16 rounded-2xl bg-gold-5 text-navy-7 flex items-center justify-center shrink-0 shadow-lg">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <circle cx="12" cy="12" r="10" />
-                      <line x1="12" y1="16" x2="12" y2="12" />
-                      <line x1="12" y1="8" x2="12.01" y2="8" />
-                    </svg>
-                  </div>
-                  <div>
-                    <p className="text-gold-4 text-xs sm:text-sm font-bold uppercase tracking-wider mb-1">
-                      {lang === 'ar' ? 'فرص دائمة ومستمرة' : 'Always Looking for Talent'}
-                    </p>
-                    <h3 className="text-lg sm:text-2xl font-bold leading-snug">
-                      {t('joinPage.cta.encouragement')}
-                    </h3>
-                  </div>
-                </div>
-                <div className="shrink-0">
+          {/* Shared Header */}
+          <div className="mb-8">
+            <p className="text-gold-5 font-semibold text-sm tracking-wide uppercase mb-2">
+              {t('joinPage.form.span')}
+            </p>
+            <h2 id="join-form-heading" className="section-title text-navy-6 dark:text-white">
+              {t('joinPage.form.title')}
+            </h2>
+          </div>
+
+          {/* Form & Sidebar Layout */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-14 items-start">
+            {/* Form Column */}
+            <div className="lg:col-span-2">
+              <JoinForm />
+            </div>
+
+            {/* Sidebar Column - Tips & HR Contact */}
+            <div className="space-y-6">
+              {/* Application Tips Card */}
+              <div className="bg-slate-0/60 dark:bg-slate-8 rounded-3xl p-6 sm:p-8 border border-slate-1/40 dark:border-slate-7 shadow-sm">
+                <h3 className="text-lg font-bold text-navy-6 dark:text-white mb-4 flex items-center gap-2">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-gold-5">
+                    <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
+                  </svg>
+                  {lang === 'ar' ? 'نصائح لتقديم متميز' : 'Application Tips'}
+                </h3>
+                <ul className="space-y-3 text-xs sm:text-sm text-slate-4 dark:text-slate-3 leading-relaxed">
+                  <li className="flex items-start gap-2">
+                    <span className="text-gold-5 font-bold">•</span>
+                    <span>
+                      {lang === 'ar'
+                        ? 'تأكد من كتابة الاسم الرباعي ورقم الواتساب بشكل دقيق.'
+                        : 'Ensure your full name and WhatsApp number are accurate.'}
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-gold-5 font-bold">•</span>
+                    <span>
+                      {lang === 'ar'
+                        ? 'أرفق سيرة ذاتية حديثة بصيغة PDF موضحاً بها أحدث الخبرات والمهارات.'
+                        : 'Attach an up-to-date CV in PDF format highlighting your recent experience.'}
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-gold-5 font-bold">•</span>
+                    <span>
+                      {lang === 'ar'
+                        ? 'حدد القسم والدولة المناسبة لتسهيل توجيه طلبك للإدارة المختصة.'
+                        : 'Select the exact department and country to route your application faster.'}
+                    </span>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Recruitment Inquiries Card */}
+              <div className="bg-white dark:bg-slate-8 rounded-3xl p-6 sm:p-8 border border-slate-0 dark:border-slate-7 shadow-sm">
+                <h3 className="text-lg font-bold text-navy-6 dark:text-white mb-4">
+                  {lang === 'ar' ? 'استفسارات التوظيف' : 'Recruitment Inquiries'}
+                </h3>
+                <div className="space-y-3 text-xs sm:text-sm">
                   <a
-                    href="#join-career-form"
-                    className="inline-flex items-center gap-2 rounded-full bg-gold-5 hover:bg-gold-4 active:bg-gold-6 text-navy-7 font-bold px-8 py-3.5 text-sm shadow-md hover:shadow-xl transition-all"
+                    href="mailto:info@srh-ksa.com"
+                    className="flex items-center gap-3 text-navy-5 dark:text-slate-2 hover:text-gold-5 transition-colors"
                   >
-                    <span>{lang === 'ar' ? 'سجل بياناتك الآن' : 'Apply Now'}</span>
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                      <line x1="12" y1="5" x2="12" y2="19"></line>
-                      <polyline points="19 12 12 19 5 12"></polyline>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-gold-5 shrink-0">
+                      <rect width="20" height="16" x="2" y="4" rx="2" />
+                      <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
                     </svg>
+                    <span>info@srh-ksa.com</span>
+                  </a>
+                  <a
+                    href="tel:+966571608000"
+                    className="flex items-center gap-3 text-navy-5 dark:text-slate-2 hover:text-gold-5 transition-colors"
+                  >
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-gold-5 shrink-0">
+                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                    </svg>
+                    <span dir="ltr">00966 571 608 000</span>
                   </a>
                 </div>
               </div>
             </div>
-          </Reveal>
-
-          {/* Form Header & Layout */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
-            {/* Form Column */}
-            <div className="lg:col-span-8">
-              <Reveal>
-                <div className="mb-8">
-                  <p className="text-gold-5 font-semibold text-sm tracking-wide uppercase mb-2">
-                    {t('joinPage.form.span')}
-                  </p>
-                  <h2 id="join-form-heading" className="section-title text-navy-6 dark:text-white">
-                    {t('joinPage.form.title')}
-                  </h2>
-                </div>
-                <JoinForm />
-              </Reveal>
-            </div>
-
-            {/* Sidebar with Helpful Tips & Contact Info */}
-            <div className="lg:col-span-4 space-y-6">
-              <Reveal variant="right">
-                {/* Application Tips Card */}
-                <div className="bg-slate-0/60 dark:bg-slate-8 rounded-3xl p-6 sm:p-8 border border-slate-1/40 dark:border-slate-7 shadow-sm">
-                  <h3 className="text-lg font-bold text-navy-6 dark:text-white mb-4 flex items-center gap-2">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-gold-5">
-                      <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
-                    </svg>
-                    {lang === 'ar' ? 'نصائح لتقديم متميز' : 'Application Tips'}
-                  </h3>
-                  <ul className="space-y-3 text-xs sm:text-sm text-slate-4 dark:text-slate-3 leading-relaxed">
-                    <li className="flex items-start gap-2">
-                      <span className="text-gold-5 font-bold">•</span>
-                      <span>
-                        {lang === 'ar'
-                          ? 'تأكد من كتابة الاسم الرباعي ورقم الواتساب بشكل دقيق.'
-                          : 'Ensure your full name and WhatsApp number are accurate.'}
-                      </span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-gold-5 font-bold">•</span>
-                      <span>
-                        {lang === 'ar'
-                          ? 'أرفق سيرة ذاتية حديثة بصيغة PDF موضحاً بها أحدث الخبرات والمهارات.'
-                          : 'Attach an up-to-date CV in PDF format highlighting your recent experience.'}
-                      </span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-gold-5 font-bold">•</span>
-                      <span>
-                        {lang === 'ar'
-                          ? 'حدد القسم والدولة المناسبة لتسهيل توجيه طلبك للإدارة المختصة.'
-                          : 'Select the exact department and country to route your application faster.'}
-                      </span>
-                    </li>
-                  </ul>
-                </div>
-
-                {/* Direct HR Contact Card */}
-                <div className="bg-white dark:bg-slate-8 rounded-3xl p-6 sm:p-8 border border-slate-0 dark:border-slate-7 shadow-sm mt-6">
-                  <h3 className="text-lg font-bold text-navy-6 dark:text-white mb-4">
-                    {lang === 'ar' ? 'استفسارات التوظيف' : 'Recruitment Inquiries'}
-                  </h3>
-                  <div className="space-y-3 text-xs sm:text-sm">
-                    <a
-                      href="mailto:info@srh-ksa.com"
-                      className="flex items-center gap-3 text-navy-5 dark:text-slate-2 hover:text-gold-5 transition-colors"
-                    >
-                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-gold-5 shrink-0">
-                        <rect width="20" height="16" x="2" y="4" rx="2" />
-                        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-                      </svg>
-                      <span>info@srh-ksa.com</span>
-                    </a>
-                    <a
-                      href="tel:+966571608000"
-                      className="flex items-center gap-3 text-navy-5 dark:text-slate-2 hover:text-gold-5 transition-colors"
-                    >
-                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-gold-5 shrink-0">
-                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-                      </svg>
-                      <span dir="ltr">00966 571 608 000</span>
-                    </a>
-                  </div>
-                </div>
-              </Reveal>
-            </div>
           </div>
         </div>
       </section>
 
-      {/* Recruitment FAQs Section */}
-      <section className="inner-section is-soft py-16 sm:py-20" aria-labelledby="join-faq-heading">
-        <div className="site-shell max-w-4xl mx-auto">
-          <Reveal className="text-center mb-12">
-            <p className="text-gold-5 font-semibold text-sm tracking-wide uppercase mb-2">
-              {lang === 'ar' ? 'الأسئلة الشائعة' : 'FAQs'}
-            </p>
-            <h2 id="join-faq-heading" className="section-title text-navy-6 dark:text-white">
-              {lang === 'ar' ? 'الأسئلة الأكثر تكراراً عن ' : 'Frequently Asked '}
-              <span>{lang === 'ar' ? 'التوظيف والعمل في SRH' : 'Questions about Careers'}</span>
-            </h2>
-          </Reveal>
-
-          <div className="space-y-4">
-            {FAQS.map((faq, index) => {
-              const isOpen = openFaq === index
-              return (
-                <div
-                  key={index}
-                  className="rounded-2xl bg-white dark:bg-slate-8 border border-slate-0 dark:border-slate-7 overflow-hidden transition-all shadow-sm"
-                >
-                  <button
-                    type="button"
-                    onClick={() => toggleFaq(index)}
-                    aria-expanded={isOpen}
-                    className="w-full flex items-center justify-between p-6 text-start font-bold text-sm sm:text-base text-navy-6 dark:text-white hover:text-gold-5 transition-colors cursor-pointer"
-                  >
-                    <span>{lang === 'ar' ? faq.qAr : faq.qEn}</span>
-                    <span
-                      className={`ms-4 w-8 h-8 rounded-full bg-slate-0 dark:bg-slate-7 flex items-center justify-center shrink-0 text-navy-6 dark:text-white transition-transform duration-300 ${
-                        isOpen ? 'rotate-180 bg-gold-4 text-white' : ''
-                      }`}
-                    >
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                        <polyline points="6 9 12 15 18 9"></polyline>
-                      </svg>
-                    </span>
-                  </button>
-                  {isOpen ? (
-                    <div className="px-6 pb-6 pt-1 text-xs sm:text-sm text-slate-4 dark:text-slate-3 leading-relaxed border-t border-slate-0 dark:border-slate-7/50">
-                      {lang === 'ar' ? faq.aAr : faq.aEn}
-                    </div>
-                  ) : null}
-                </div>
-              )
-            })}
-          </div>
-        </div>
-      </section>
     </>
   )
 }

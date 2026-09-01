@@ -105,37 +105,6 @@ export function Header() {
                 {t(`nav.${item.key}`)}
               </NavLink>
             ))}
-            <div className="relative">
-              <button
-                id="search-toggle"
-                type="button"
-                aria-label={t('header.searchAria')}
-                className="flex text-white/90 hover:text-gold-4 transition-colors"
-                onClick={() => setSearchOpen((open) => !open)}
-              >
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <circle cx="11" cy="11" r="7" />
-                  <line x1="21" y1="21" x2="16.65" y2="16.65" />
-                </svg>
-              </button>
-              <div
-                id="search-box"
-                className={`absolute end-0 top-9 w-64 bg-navy-7 border border-white/10 rounded-xl shadow-lg p-2 ${
-                  searchOpen ? '' : 'hidden'
-                }`}
-              >
-                <label htmlFor="site-search" className="sr-only">
-                  {t('header.searchLabel')}
-                </label>
-                <input
-                  id="site-search"
-                  type="search"
-                  placeholder={t('header.searchPlaceholder')}
-                  ref={searchInputRef}
-                  className="w-full px-3 py-2 rounded-lg bg-navy-6 text-sm text-white placeholder:text-slate-3 focus:outline-none focus:ring-2 focus:ring-gold-5"
-                />
-              </div>
-            </div>
           </nav>
 
           <div className="site-header-actions flex items-center gap-1 sm:gap-2">
