@@ -30,13 +30,13 @@ export function HomeHero() {
           {t("hero.welcome")}
         </p>
         <h1
-          className="hero-line font-heading font-bold text-white text-[clamp(46px,13vw,56px)] sm:text-[clamp(68px,7vw,112px)] leading-[1.15] tracking-[-0.045em] whitespace-pre-line"
+          className="hero-line font-heading font-bold text-white text-[clamp(28px,9vw,56px)] sm:text-[clamp(68px,7vw,112px)] leading-[1.15] tracking-[-0.045em] whitespace-pre-line"
           style={line(1)}
         >
           {t("hero.brand")}
         </h1>
         <p
-          className="hero-line font-heading font-normal text-white/90 text-[clamp(27px,7vw,32px)] sm:text-[clamp(36px,3.6vw,58px)] leading-none mt-3 mb-8"
+          className="hero-line font-heading font-normal text-white/90 text-[clamp(16px,4.5vw,32px)] sm:text-[clamp(36px,3.6vw,58px)] leading-none mt-3 mb-8 hidden sm:block"
           style={line(2)}
         >
           {t("hero.tagline")}
@@ -52,7 +52,7 @@ export function HomeHero() {
           className="hero-line inline-flex items-center rounded-full bg-navy-4 hover:bg-navy-3 text-white px-11 py-3 text-sm font-medium transition-colors"
           style={line(4)}
         >
-          {t("common.more")}
+          {t("hero.joinUs")}
         </a>
       </div>
     </section>

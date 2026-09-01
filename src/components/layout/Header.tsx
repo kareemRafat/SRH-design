@@ -16,7 +16,7 @@ export function Header() {
   const { isDark, toggle } = useTheme()
   const { lang, toggle: toggleLang, t } = useLanguage()
   const [mobileOpen, setMobileOpen] = useState(false)
-  const [searchOpen, setSearchOpen] = useState(false)
+  const [searchOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const searchInputRef = useRef<HTMLInputElement>(null)
   const navToggleRef = useRef<HTMLButtonElement>(null)

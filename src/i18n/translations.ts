@@ -10,7 +10,7 @@ export const translations: Record<Language, Dictionary> = {
     'nav.projects': 'Our projects',
     'nav.agents': 'Our Brands',
     'nav.maintenance': 'Maintenance',
-    'nav.join': 'Careers',
+    'nav.join': 'Join Us',
 
     'header.contact': 'Contact us',
     'header.searchAria': 'Toggle search',
@@ -51,6 +51,8 @@ export const translations: Record<Language, Dictionary> = {
     'common.readMore': 'Read more',
     'common.readLess': 'Show less',
     'common.aboutUs': 'About US',
+
+    'hero.joinUs': 'Join Us',
 
     'seo.title.home': 'Home | SRH',
     'seo.title.about': 'About Us | SRH',
@@ -570,7 +572,6 @@ export const translations: Record<Language, Dictionary> = {
     'map.pageTitle': 'SRH office location map',
 
     'joinPage.hero.title': 'Join Our Team',
-    'joinPage.hero.subtitle': 'Build the future of vertical mobility with us',
     'joinPage.kicker': 'Life at SRH',
     'joinPage.intro.title': 'We Grow Through',
     'joinPage.intro.span': 'Our People',
@@ -717,6 +718,7 @@ export const translations: Record<Language, Dictionary> = {
     'hero.welcome': 'مرحباً بكم في',
     'hero.brand': 'الوصول\nالآمن',
     'hero.tagline': 'للمصاعد',
+    'hero.joinUs': 'انضما اليا',
     'hero.sub1': 'نحن لا نوفر المصاعد فقط،',
     'hero.sub2': 'بل نوفر راحة البال',
     'hero.imageAlt': 'أفق المدينة مع مصعد زجاجي عند الغسق',
@@ -1213,7 +1215,6 @@ export const translations: Record<Language, Dictionary> = {
     'map.pageTitle': 'خريطة موقع مكتب SRH',
 
     'joinPage.hero.title': 'انضم إلى فريقنا',
-    'joinPage.hero.subtitle': 'اصنع مستقبلك المهني مع رواد حلول المصاعد والنقل الرأسي',
     'joinPage.kicker': 'بيئة العمل في SRH',
     'joinPage.intro.title': 'نجاحنا يبدأ من',
     'joinPage.intro.span': 'فريق عملنا',

@@ -132,38 +132,12 @@ export function JoinPage() {
     },
   ]
 
-  const STEPS = [
-    {
-      num: '01',
-      titleKey: 'joinPage.steps.1.title',
-      descKey: 'joinPage.steps.1.desc',
-    },
-    {
-      num: '02',
-      titleKey: 'joinPage.steps.2.title',
-      descKey: 'joinPage.steps.2.desc',
-    },
-    {
-      num: '03',
-      titleKey: 'joinPage.steps.3.title',
-      descKey: 'joinPage.steps.3.desc',
-    },
-    {
-      num: '04',
-      titleKey: 'joinPage.steps.4.title',
-      descKey: 'joinPage.steps.4.desc',
-    },
-  ]
-
   return (
     <>
       <Seo titleKey="seo.title.join" descriptionKey="seo.description" />
 
       {/* Hero */}
-      <PageHero
-        title={t('joinPage.hero.title')}
-        highlight={t('joinPage.hero.subtitle')}
-      />
+      <PageHero title={t('joinPage.hero.title')} />
 
       {/* Intro Section (Intro text with luxury split styling) */}
       <section className="inner-section py-16 sm:py-24" aria-labelledby="join-intro-heading">
