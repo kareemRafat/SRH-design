@@ -36,6 +36,7 @@ export function Footer() {
           <Link to="/projects">{t('nav.projects')}</Link>
           <Link to="/agents">{t('agents.menu')}</Link>
           <Link to="/maintenance">{t('footer.maintenance')}</Link>
+          <Link to="/join">{t('footer.join')}</Link>
           <Link to="/#vision">{t('footer.vision')}</Link>
           <Link to="/#values">{t('footer.values')}</Link>
         </div>

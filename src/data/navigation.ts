@@ -10,4 +10,5 @@ export const NAV_ITEMS: NavItem[] = [
   { key: 'projects', to: '/projects' },
   { key: 'agents', to: '/agents' },
   { key: 'maintenance', to: '/maintenance' },
+  { key: 'join', to: '/join' },
 ]
