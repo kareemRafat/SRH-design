@@ -140,7 +140,7 @@ export function JoinPage() {
       <PageHero title={t('joinPage.hero.title')} />
 
       {/* Intro Section (Intro text with luxury split styling) */}
-      <section className="inner-section py-16 sm:py-24" aria-labelledby="join-intro-heading">
+      <section className="inner-section py-16 sm:py-24 !bg-slate-0/60 dark:!bg-slate-8/40" aria-labelledby="join-intro-heading">
         <div className="site-shell">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
             {/* Left Image & Stats Card */}
@@ -233,7 +233,7 @@ export function JoinPage() {
       </section>
 
       {/* Pillars / Culture Section */}
-      <section className="inner-section is-soft py-16 sm:py-24" aria-labelledby="join-pillars-heading">
+      <section className="inner-section is-soft py-16 sm:py-24 !bg-slate-0 dark:!bg-slate-8" aria-labelledby="join-pillars-heading">
         <div className="site-shell">
           <Reveal className="mb-14">
             <p className="text-gold-5 font-semibold text-sm tracking-wide uppercase mb-2">
@@ -271,7 +271,7 @@ export function JoinPage() {
       </section>
 
       {/* Career Paths / Departments */}
-      <section className="inner-section is-soft py-16 sm:py-20" aria-labelledby="join-depts-heading">
+      <section className="inner-section is-soft py-16 sm:py-20 !bg-slate-0/60 dark:!bg-slate-8/40" aria-labelledby="join-depts-heading">
         <div className="site-shell">
           <Reveal className="mb-14">
             <p className="text-gold-5 font-semibold text-sm tracking-wide uppercase mb-2">
@@ -308,7 +308,7 @@ export function JoinPage() {
       </section>
 
       {/* Application Form Section */}
-      <section id="application-form" className="inner-section py-16 sm:py-24" aria-labelledby="join-form-heading">
+      <section id="application-form" className="inner-section py-16 sm:py-24 !bg-slate-0 dark:!bg-slate-8" aria-labelledby="join-form-heading">
         <div className="site-shell">
           {/* Shared Header */}
           <div className="mb-8">
