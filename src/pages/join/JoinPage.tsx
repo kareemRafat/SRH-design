@@ -177,7 +177,7 @@ export function JoinPage() {
                     <img
                       loading="lazy"
                       decoding="async"
-                      src="/assets/images/future-2.webp"
+                      src="/assets/images/ele2.webp"
                       alt={t('joinPage.intro.title')}
                       className="w-full h-[420px] sm:h-[480px] object-cover transition-transform duration-700 group-hover:scale-105"
                     />
