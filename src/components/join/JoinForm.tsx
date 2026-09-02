@@ -84,7 +84,7 @@ export function JoinForm() {
   return (
     <form
       id="join-career-form"
-      className="bg-white dark:bg-slate-8 rounded-3xl p-6 sm:p-10 shadow-xl border border-slate-0 dark:border-slate-7 text-navy-6 dark:text-slate-1 transition-colors"
+      className="bg-white dark:bg-slate-8 rounded-3xl p-6 sm:p-10 shadow-md border border-slate-0 dark:border-slate-7 text-navy-6 dark:text-slate-1 transition-colors"
       noValidate
       onSubmit={handleSubmit}
     >

@@ -330,16 +330,16 @@ export function JoinPage() {
             {/* Sidebar Column - Tips & HR Contact */}
             <div className="space-y-6">
               {/* Application Tips Card */}
-              <div className="bg-slate-0/60 dark:bg-slate-8 rounded-3xl p-6 sm:p-8 border border-slate-1/40 dark:border-slate-7 shadow-sm">
-                <h3 className="text-lg font-bold text-navy-6 dark:text-white mb-4 flex items-center gap-2">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-gold-5">
+              <div className="bg-navy-4 rounded-3xl p-6 sm:p-8 shadow-sm">
+                <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-gold-3">
                     <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
                   </svg>
                   {lang === 'ar' ? 'نصائح لتقديم متميز' : 'Application Tips'}
                 </h3>
-                <ul className="space-y-3 text-xs sm:text-sm text-slate-4 dark:text-slate-3 leading-relaxed">
+                <ul className="space-y-3 text-xs sm:text-sm text-white/80 leading-relaxed">
                   <li className="flex items-start gap-2">
-                    <span className="text-gold-5 font-bold">•</span>
+                    <span className="text-gold-3 font-bold">•</span>
                     <span>
                       {lang === 'ar'
                         ? 'تأكد من كتابة الاسم الرباعي ورقم الواتساب بشكل دقيق.'
@@ -347,7 +347,7 @@ export function JoinPage() {
                     </span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-gold-5 font-bold">•</span>
+                    <span className="text-gold-3 font-bold">•</span>
                     <span>
                       {lang === 'ar'
                         ? 'أرفق سيرة ذاتية حديثة بصيغة PDF موضحاً بها أحدث الخبرات والمهارات.'
@@ -355,7 +355,7 @@ export function JoinPage() {
                     </span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-gold-5 font-bold">•</span>
+                    <span className="text-gold-3 font-bold">•</span>
                     <span>
                       {lang === 'ar'
                         ? 'حدد القسم والدولة المناسبة لتسهيل توجيه طلبك للإدارة المختصة.'
@@ -366,16 +366,16 @@ export function JoinPage() {
               </div>
 
               {/* Recruitment Inquiries Card */}
-              <div className="bg-white dark:bg-slate-8 rounded-3xl p-6 sm:p-8 border border-slate-0 dark:border-slate-7 shadow-sm">
-                <h3 className="text-lg font-bold text-navy-6 dark:text-white mb-4">
+              <div className="bg-gold-3 rounded-3xl p-6 sm:p-8 shadow-xl">
+                <h3 className="text-lg font-bold text-navy-6 mb-4">
                   {lang === 'ar' ? 'استفسارات التوظيف' : 'Recruitment Inquiries'}
                 </h3>
                 <div className="space-y-3 text-xs sm:text-sm">
                   <a
                     href="mailto:info@srh-ksa.com"
-                    className="flex items-center gap-3 text-navy-5 dark:text-slate-2 hover:text-gold-5 transition-colors"
+                    className="flex items-center gap-3 text-navy-6 hover:text-navy-4 transition-colors"
                   >
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-gold-5 shrink-0">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-navy-6 shrink-0">
                       <rect width="20" height="16" x="2" y="4" rx="2" />
                       <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
                     </svg>
@@ -383,9 +383,9 @@ export function JoinPage() {
                   </a>
                   <a
                     href="tel:+966571608000"
-                    className="flex items-center gap-3 text-navy-5 dark:text-slate-2 hover:text-gold-5 transition-colors"
+                    className="flex items-center gap-3 text-navy-6 hover:text-navy-4 transition-colors"
                   >
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-gold-5 shrink-0">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-navy-6 shrink-0">
                       <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
                     </svg>
                     <span dir="ltr">00966 571 608 000</span>
