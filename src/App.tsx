@@ -21,7 +21,7 @@ export default function App() {
         <Route path="/services/:slug" element={<ServiceCatalogPage />} />
         <Route path="/projects" element={<ProjectsPage />} />
         <Route path="/projects/:id" element={<ProjectDetailsPage />} />
-        <Route path="/agents" element={<AgentsPage />} />
+        <Route path="/brands" element={<AgentsPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/maintenance" element={<MaintenancePage />} />
         <Route path="/join" element={<JoinPage />} />

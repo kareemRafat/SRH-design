@@ -34,7 +34,7 @@ export function Footer() {
         <div className="footer-links">
           <h2>{t('footer.linksTitle')}</h2>
           <Link to="/projects">{t('nav.projects')}</Link>
-          <Link to="/agents">{t('agents.menu')}</Link>
+          <Link to="/brands">{t('brands.menu')}</Link>
           <Link to="/maintenance">{t('footer.maintenance')}</Link>
           <Link to="/join">{t('footer.join')}</Link>
           <Link to="/#vision">{t('footer.vision')}</Link>

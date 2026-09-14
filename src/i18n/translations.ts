@@ -8,7 +8,7 @@ export const translations: Record<Language, Dictionary> = {
     'nav.about': 'About US',
     'nav.services': 'Services',
     'nav.projects': 'Our projects',
-    'nav.agents': 'Our Brands',
+    'nav.brands': 'Our Brands',
     'nav.maintenance': 'Maintenance',
     'nav.join': 'Join Us',
 
@@ -33,7 +33,7 @@ export const translations: Record<Language, Dictionary> = {
     'footer.vision': 'Our vision',
     'footer.maintenance': 'Maintenance',
     'footer.join': 'Careers',
-    'agents.menu': 'Our Brands',
+    'brands.menu': 'Our Brands',
     'footer.address': 'Ibrahim Al-Jafali Street, Al-Awali District, Makkah Al-Mukarramah 24372, Saudi Arabia',
     'footer.license': 'HCIS License No. 117531200 — valid until 20/07/2026',
     'footer.cr': 'Commercial Register 4031302425',
@@ -58,7 +58,7 @@ export const translations: Record<Language, Dictionary> = {
     'seo.title.about': 'About Us | SRH',
     'seo.title.services': 'Services | SRH',
     'seo.title.projects': 'Projects | SRH',
-    'seo.title.agents': 'Our Brands | SRH',
+    'seo.title.brands': 'Our Brands | SRH',
     'seo.title.contact': 'Contact Us | SRH',
     'seo.title.maintenance': 'Maintenance | SRH',
     'seo.title.join': 'Join Our Team | SRH',
@@ -143,20 +143,20 @@ export const translations: Record<Language, Dictionary> = {
     'testimonials.t4.quote':
       'What impressed me most is their response speed. When we reported an issue, a technician was on-site the same day. Professional, clean and dependable — I would not hesitate to choose them again.',
 
-    'agents.preview.kicker': 'A Brief Overview of Our Brands',
-    'agents.preview.title1': 'Our',
-    'agents.preview.title2': 'Brands',
-    'agents.preview.details': 'Details..',
-    'agents.srh.logoAlt': 'SRH Elevators logo',
-    'agents.srh.description':
+    'brands.preview.kicker': 'A Brief Overview of Our Brands',
+    'brands.preview.title1': 'Our',
+    'brands.preview.title2': 'Brands',
+    'brands.preview.details': 'Details..',
+    'brands.srh.logoAlt': 'SRH Elevators logo',
+    'brands.srh.description':
       'The SRH brand is originally German and currently manufactured in China. For clients requiring a European origin, elevators can be imported directly from Germany upon request \u2014 backed by authorized distribution, installation and maintenance across Saudi Arabia.',
-    'agents.fuji.logoAlt': 'FUJI elevator systems logo',
-    'agents.fuji.description':
+    'brands.fuji.logoAlt': 'FUJI elevator systems logo',
+    'brands.fuji.description':
       'FUJI is a well-established and renowned Chinese brand operating a massive manufacturing facility backed by a rich history. Fuji-Sino Elevators has transferred Japanese technology since 1997, opened its European branch in Malta in 2015, and serves a sales network across more than 40 countries.',
-    'agents.bdfuji.logoAlt': 'BDFUJI elevator systems logo',
-    'agents.bdfuji.description':
+    'brands.bdfuji.logoAlt': 'BDFUJI elevator systems logo',
+    'brands.bdfuji.description':
       'BDFUJI combines low cost with high quality, making it ideal for economic projects with limited budgets. Of German origin and manufactured in China, with direct importation from Germany available upon request for clients requiring a European reference.',
-    'agents.viewCatalogue': 'View Catalogue',
+    'brands.viewCatalogue': 'View Catalogue',
 
     'branches.kicker': 'Find us around the world',
     'branches.title1': 'Our',
@@ -533,9 +533,9 @@ export const translations: Record<Language, Dictionary> = {
     'contactPage.contact.span': 'touch',
     'contactPage.officeAlt': 'SRH modern office interior',
 
-    'agentsPage.hero.title': 'Our',
-    'agentsPage.hero.highlight': 'Brands',
-    'agentsPage.aria': 'SRH brands',
+    'brandsPage.hero.title': 'Our',
+    'brandsPage.hero.highlight': 'Brands',
+    'brandsPage.aria': 'SRH brands',
 
     'form.nameLabel': 'Name',
     'form.namePlaceholder': 'Name',
@@ -659,7 +659,7 @@ export const translations: Record<Language, Dictionary> = {
     'nav.about': 'عن الشركة',
     'nav.services': 'خدماتنا',
     'nav.projects': 'مشاريعنا',
-    'nav.agents': 'علاماتنا التجارية',
+    'nav.brands': 'علاماتنا التجارية',
     'nav.maintenance': 'الصيانة',
     'nav.join': 'انضم إلينا',
 
@@ -684,7 +684,7 @@ export const translations: Record<Language, Dictionary> = {
     'footer.vision': 'رؤيتنا',
     'footer.maintenance': 'الصيانة',
     'footer.join': 'انضم إلينا',
-    'agents.menu': 'علاماتنا التجارية',
+    'brands.menu': 'علاماتنا التجارية',
     'footer.address': 'شارع إبراهيم الجفالي، حي العوالي، مكة المكرمة 24372، المملكة العربية السعودية',
     'footer.license': 'ترخيص HCIS رقم 117531200 — ساري حتى 20/07/2026',
     'footer.cr': 'السجل التجاري 4031302425',
@@ -707,7 +707,7 @@ export const translations: Record<Language, Dictionary> = {
     'seo.title.about': 'عن الشركة | SRH',
     'seo.title.services': 'خدماتنا | SRH',
     'seo.title.projects': 'مشاريعنا | SRH',
-    'seo.title.agents': 'علاماتنا التجارية | SRH',
+    'seo.title.brands': 'علاماتنا التجارية | SRH',
     'seo.title.contact': 'تواصل معنا | SRH',
     'seo.title.maintenance': 'الصيانة | SRH',
     'seo.title.join': 'انضم لفريقنا | SRH',
@@ -718,7 +718,7 @@ export const translations: Record<Language, Dictionary> = {
     'hero.welcome': 'مرحباً بكم في',
     'hero.brand': 'الوصول\nالآمن',
     'hero.tagline': 'للمصاعد',
-    'hero.joinUs': 'انضما اليا',
+    'hero.joinUs': 'انضم الينا',
     'hero.sub1': 'نحن لا نوفر المصاعد فقط،',
     'hero.sub2': 'بل نوفر راحة البال',
     'hero.imageAlt': 'أفق المدينة مع مصعد زجاجي عند الغسق',
@@ -792,20 +792,20 @@ export const translations: Record<Language, Dictionary> = {
     'testimonials.t4.quote':
       'ما أعجبني أكثر هو سرعة الاستجابة. عندما أبلغنا عن عطل، وصل الفني في نفس اليوم. محترفون وأنيقون وموثوقون — لن أتردد في اختيارهم مرة أخرى.',
 
-    'agents.preview.kicker': 'نبذة مختصرة عن علاماتنا التجارية',
-    'agents.preview.title1': 'علاماتنا',
-    'agents.preview.title2': 'التجارية',
-    'agents.preview.details': 'التفاصيل..',
-    'agents.srh.logoAlt': 'شعار مصاعد SRH',
-    'agents.srh.description':
+    'brands.preview.kicker': 'نبذة مختصرة عن علاماتنا التجارية',
+    'brands.preview.title1': 'علاماتنا',
+    'brands.preview.title2': 'التجارية',
+    'brands.preview.details': 'التفاصيل..',
+    'brands.srh.logoAlt': 'شعار مصاعد SRH',
+    'brands.srh.description':
       'علامة SRH ذات أصل ألماني وتُصنَّع حالياً في الصين، ويمكن استيراد المصاعد مباشرة من ألمانيا للعملاء الذين يطلبون مرجعية أوروبية — مدعومةً بالتوزيع والتركيب والصيانة المعتمدين لدينا في جميع أنحاء المملكة العربية السعودية.',
-    'agents.fuji.logoAlt': 'شعار أنظمة مصاعد فوجي',
-    'agents.fuji.description':
+    'brands.fuji.logoAlt': 'شعار أنظمة مصاعد فوجي',
+    'brands.fuji.description':
       'FUJI علامة صينية عريقة تمتلك مصنعاً ضخماً وتاريخاً حافلاً؛ نقلت تقنيات يابانية منذ عام 1997، وأسست فرعها الأوروبي في مالطا عام 2015، وتخدم شبكة مبيعات تمتد لأكثر من 40 دولة.',
-    'agents.bdfuji.logoAlt': 'شعار أنظمة مصاعد BDFUJI',
-    'agents.bdfuji.description':
+    'brands.bdfuji.logoAlt': 'شعار أنظمة مصاعد BDFUJI',
+    'brands.bdfuji.description':
       'يجمع BDFUJI بين التكلفة المنخفضة والجودة العالية، مما يجعله مثالياً للمشاريع الاقتصادية محدودة الميزانيات؛ ذو أصل ألماني ويُصنَّع في الصين، مع إمكانية الاستيراد المباشر من ألمانيا للعملاء الذين يطلبون مرجعية أوروبية.',
-    'agents.viewCatalogue': 'عرض الكتالوج',
+    'brands.viewCatalogue': 'عرض الكتالوج',
 
     'branches.kicker': 'ابحث عنا حول العالم',
     'branches.title1': 'فروعنا',
@@ -1177,9 +1177,9 @@ export const translations: Record<Language, Dictionary> = {
     'contactPage.contact.span': 'معنا',
     'contactPage.officeAlt': 'المكتب العصري لشركة SRH',
 
-    'agentsPage.hero.title': 'علاماتنا',
-    'agentsPage.hero.highlight': 'التجارية',
-    'agentsPage.aria': 'علامات SRH التجارية',
+    'brandsPage.hero.title': 'علاماتنا',
+    'brandsPage.hero.highlight': 'التجارية',
+    'brandsPage.aria': 'علامات SRH التجارية',
 
     'form.nameLabel': 'الاسم',
     'form.namePlaceholder': 'الاسم',

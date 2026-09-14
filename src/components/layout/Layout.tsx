@@ -8,7 +8,7 @@ import { ScrollTopButton } from './ScrollTopButton'
 import { WhatsAppButton } from './WhatsAppButton'
 import { useLanguage } from '../../hooks/useLanguage'
 
-const INNER_PAGES = ['services', 'projects', 'agents', 'faq', 'contact', 'maintenance']
+const INNER_PAGES = ['services', 'projects', 'brands', 'faq', 'contact', 'maintenance']
 
 export function Layout() {
   const { pathname, hash } = useLocation()
@@ -21,7 +21,7 @@ export function Layout() {
 
     document.body.classList.toggle('page-body', isInner)
     document.body.classList.toggle('maintenance-page', segment === 'maintenance')
-    document.body.classList.toggle('agents-page', segment === 'agents')
+    document.body.classList.toggle('agents-page', segment === 'brands')
 
     if (isInner) {
       document.body.dataset.page = segment

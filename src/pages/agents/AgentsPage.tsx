@@ -8,10 +8,10 @@ export function AgentsPage() {
   const { t } = useLanguage()
   return (
     <>
-      <Seo titleKey="seo.title.agents" descriptionKey="seo.description" />
-      <PageHero title={t('agentsPage.hero.title')} highlight={t('agentsPage.hero.highlight')} />
+      <Seo titleKey="seo.title.brands" descriptionKey="seo.description" />
+      <PageHero title={t('brandsPage.hero.title')} highlight={t('brandsPage.hero.highlight')} />
 
-      <section className="agent-list" aria-label={t('agentsPage.aria')}>
+      <section className="agent-list" aria-label={t('brandsPage.aria')}>
         {AGENTS.map((agent, index) => (
           <AgentBand key={agent.name} agent={agent} even={index % 2 === 1} />
         ))}
