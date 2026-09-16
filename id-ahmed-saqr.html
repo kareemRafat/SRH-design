@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="/images/favicon.png" />
+  <title>Eng. Ahmed Saqr | SRH</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <script>
+    (function () {
+      var storedTheme = null;
+      try { storedTheme = localStorage.getItem('srh-theme'); } catch (e) {}
+      var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      var isDark = storedTheme ? storedTheme === 'dark' : prefersDark;
+      document.documentElement.classList.toggle('dark', isDark);
+      var storedLang = null;
+      try { storedLang = localStorage.getItem('srh-lang'); } catch (e) {}
+      var lang = storedLang === 'ar' ? 'ar' : 'en';
+      document.documentElement.lang = lang;
+      document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+    })();
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+    @custom-variant dark (&:where(.dark, .dark *));
+    @theme {
+      --color-navy-3: #4a5071;
+      --color-navy-4: #303451;
+      --color-navy-5: #151930;
+      --color-navy-6: #111426;
+      --color-navy-7: #0d0f1d;
+      --color-slate-0: #e6e7f1;
+      --color-slate-1: #c5c7d7;
+      --color-slate-2: #a3a7bd;
+      --color-slate-3: #8286a4;
+      --color-slate-4: #60668a;
+      --color-slate-5: #3f4670;
+      --color-gold-3: #f1c588;
+      --color-gold-4: #ecb260;
+      --color-gold-5: #e79f38;
+      --color-gold-6: #b97f2d;
+      --font-sans: 'Poppins', sans-serif;
+      --font-heading: 'Poppins', sans-serif;
+    }
+    @font-face {
+      font-family: 'Poppins'; font-style: normal; font-weight: 400; font-display: swap;
+      src: url('/assets/fonts/poppins-400.woff2') format('woff2');
+    }
+    @font-face {
+      font-family: 'Poppins'; font-style: normal; font-weight: 500; font-display: swap;
+      src: url('/assets/fonts/poppins-500.woff2') format('woff2');
+    }
+    @font-face {
+      font-family: 'Poppins'; font-style: normal; font-weight: 600; font-display: swap;
+      src: url('/assets/fonts/poppins-600.woff2') format('woff2');
+    }
+    @font-face {
+      font-family: 'Poppins'; font-style: normal; font-weight: 700; font-display: swap;
+      src: url('/assets/fonts/poppins-700.woff2') format('woff2');
+    }
+    html[dir='rtl'] {
+      --font-sans: 'Readex Pro', 'Poppins', sans-serif;
+      --font-heading: 'Readex Pro', 'Poppins', sans-serif;
+    }
+    html[dir='rtl'] body, html[dir='rtl'] body * {
+      font-family: 'Readex Pro', 'Poppins', sans-serif !important;
+      letter-spacing: 0 !important;
+    }
+  </style>
+</head>
+<body class="bg-slate-0 font-sans text-navy-6 antialiased dark:bg-navy-7 dark:text-white">
+  <div class="relative min-h-screen overflow-x-clip">
+    <!-- Backdrop decor -->
+    <div aria-hidden="true" class="pointer-events-none absolute inset-0">
+      <div class="absolute inset-x-0 top-0 h-72 bg-gradient-to-b from-navy-4/15 to-transparent dark:from-navy-4/60"></div>
+      <div class="absolute -top-24 start-1/2 h-72 w-[36rem] max-w-none -translate-x-1/2 rounded-full bg-gold-4/25 blur-3xl rtl:translate-x-1/2 dark:bg-gold-5/15"></div>
+      <div class="absolute -bottom-32 -start-24 h-80 w-80 rounded-full bg-navy-3/15 blur-3xl dark:bg-navy-4/70"></div>
+      <div class="absolute -bottom-32 -end-24 h-80 w-80 rounded-full bg-gold-4/15 blur-3xl dark:bg-navy-5/60"></div>
+    </div>
+
+    <!-- Full-width dark brand band -->
+    <div class="relative z-10 flex w-full justify-center bg-navy-6/85 py-4 backdrop-blur dark:bg-black/30">
+      <img
+        src="/assets/images/SRH-logo-optimized.webp"
+        alt="SRH — Safe Reach for Elevators"
+        class="h-16 w-auto object-contain drop-shadow-sm sm:h-20"
+        loading="eager"
+        decoding="async"
+      />
+    </div>
+
+    <div class="relative z-10 mx-auto flex w-full max-w-lg flex-col items-center px-5 pb-12 pt-8 sm:pb-16 sm:pt-10">
+      <div class="flex w-full flex-col items-center justify-center pb-8 pt-4">
+        <div class="flex w-full flex-col items-center text-center">
+          <!-- Photo with verified seal -->
+          <div class="relative">
+            <img
+              src="/assets/images/leaders/ceo.webp"
+              alt="Eng. Ahmed Saqr"
+              class="h-32 w-32 rounded-full object-cover object-top ring-2 ring-gold-4 ring-offset-4 ring-offset-transparent"
+              loading="eager"
+              decoding="async"
+            />
+            <span
+              id="seal"
+              title="Verified"
+              aria-label="Verified"
+              class="absolute -bottom-1 -end-1 flex h-10 w-10 items-center justify-center rounded-full bg-emerald-500 text-white shadow-lg ring-4 ring-slate-0 dark:ring-navy-7"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                <path d="m9 12 2 2 4-4" />
+              </svg>
+            </span>
+          </div>
+
+          <!-- Identity -->
+          <p id="t-kicker" class="mt-5 text-[11px] font-bold uppercase tracking-[0.3em] text-gold-6 dark:text-gold-3">Employee ID</p>
+          <h1 id="t-name" class="mt-1 font-heading text-3xl font-bold leading-tight hyphens-none break-normal sm:text-4xl">Eng. Ahmed Saqr</h1>
+          <p id="t-sub" class="mt-1.5 text-xl font-semibold text-slate-5 dark:text-slate-2" style="font-family:'Readex Pro','Poppins',sans-serif">م. أحمد صقر</p>
+          <p id="t-title" class="mt-1.5 text-base font-semibold text-navy-5 dark:text-slate-1">Chief Executive Officer</p>
+
+          <!-- Divider -->
+          <div aria-hidden="true" class="my-7 h-px w-24 bg-gradient-to-l from-transparent via-gold-5 to-transparent"></div>
+
+          <!-- Details -->
+          <dl class="w-full max-w-xs divide-y divide-navy-4/10 text-start dark:divide-white/10">
+            <div class="flex items-baseline justify-between gap-4 py-3">
+              <dt id="t-idlabel" class="text-xs font-semibold uppercase tracking-wider text-slate-4 dark:text-slate-3">Employee No.</dt>
+              <dd class="text-base font-bold" dir="ltr">SRH-001</dd>
+            </div>
+            <div class="flex items-baseline justify-between gap-4 py-3">
+              <dt id="t-deptlabel" class="text-xs font-semibold uppercase tracking-wider text-slate-4 dark:text-slate-3">Department</dt>
+              <dd id="t-dept" class="text-base font-bold">Executive</dd>
+            </div>
+            <div class="py-4 text-center">
+              <p id="t-addr" class="text-sm font-semibold leading-relaxed">Ibrahim Al-Jafali Street, Al-Awali District, Makkah Al-Mukarramah 24372, Saudi Arabia</p>
+            </div>
+          </dl>
+        </div>
+      </div>
+
+      <!-- Footer controls + note -->
+      <div class="flex items-center justify-center gap-5">
+        <button
+          type="button"
+          id="langBtn"
+          aria-label="Switch language"
+          title="عربي"
+          class="text-[11px] font-bold tracking-wider text-slate-4/70 transition-colors hover:text-gold-6 dark:text-slate-3/70 dark:hover:text-gold-3"
+        >AR</button>
+        <button
+          type="button"
+          id="themeBtn"
+          aria-label="Switch to dark mode"
+          class="text-slate-4/70 transition-colors hover:text-gold-6 dark:text-slate-3/70 dark:hover:text-gold-3"
+        >
+          <svg id="iconMoon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+          </svg>
+          <svg id="iconSun" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:none">
+            <circle cx="12" cy="12" r="4" />
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
+          </svg>
+        </button>
+      </div>
+      <p class="mt-3 text-center text-[11px] font-medium tracking-wide text-slate-4/80 dark:text-slate-3/70" dir="ltr">srh-ksa.com</p>
+    </div>
+  </div>
+
+  <script>
+    var STR = {
+      en: {
+        kicker: 'Employee ID', name: 'Eng. Ahmed Saqr', sub: 'م. أحمد صقر',
+        title: 'Chief Executive Officer', idlabel: 'Employee No.', deptlabel: 'Department',
+        dept: 'Executive',
+        addr: 'Ibrahim Al-Jafali Street, Al-Awali District, Makkah Al-Mukarramah 24372, Saudi Arabia',
+        verified: 'Verified', langBtn: 'AR', langTitle: 'عربي',
+        themeToDark: 'Switch to dark mode', themeToLight: 'Switch to light mode'
+      },
+      ar: {
+        kicker: 'بطاقة موظف', name: 'م. أحمد صقر', sub: 'Eng. Ahmed Saqr',
+        title: 'الرئيس التنفيذي', idlabel: 'الرقم الوظيفي', deptlabel: 'الإدارة',
+        dept: 'الإدارة التنفيذية',
+        addr: 'شارع إبراهيم الجفالي، حي العوالي، مكة المكرمة 24372، المملكة العربية السعودية',
+        verified: 'معتمد', langBtn: 'EN', langTitle: 'English',
+        themeToDark: 'التبديل إلى الوضع الداكن', themeToLight: 'التبديل إلى الوضع الفاتح'
+      }
+    };
+    function currentLang() { return document.documentElement.lang === 'ar' ? 'ar' : 'en'; }
+    function syncThemeLabel() {
+      var isDark = document.documentElement.classList.contains('dark');
+      var s = STR[currentLang()];
+      document.getElementById('iconMoon').style.display = isDark ? 'none' : '';
+      document.getElementById('iconSun').style.display = isDark ? '' : 'none';
+      document.getElementById('themeBtn').setAttribute('aria-label', isDark ? s.themeToLight : s.themeToDark);
+    }
+    function applyLang(lang) {
+      var s = STR[lang];
+      document.documentElement.lang = lang;
+      document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+      document.getElementById('t-kicker').textContent = s.kicker;
+      document.getElementById('t-name').textContent = s.name;
+      document.getElementById('t-sub').textContent = s.sub;
+      document.getElementById('t-title').textContent = s.title;
+      document.getElementById('t-idlabel').textContent = s.idlabel;
+      document.getElementById('t-deptlabel').textContent = s.deptlabel;
+      document.getElementById('t-dept').textContent = s.dept;
+      document.getElementById('t-addr').textContent = s.addr;
+      document.getElementById('seal').title = s.verified;
+      document.getElementById('seal').setAttribute('aria-label', s.verified);
+      var langBtn = document.getElementById('langBtn');
+      langBtn.textContent = s.langBtn;
+      langBtn.title = s.langTitle;
+      try { localStorage.setItem('srh-lang', lang); } catch (e) {}
+      syncThemeLabel();
+    }
+    document.getElementById('langBtn').addEventListener('click', function () {
+      applyLang(currentLang() === 'ar' ? 'en' : 'ar');
+    });
+    document.getElementById('themeBtn').addEventListener('click', function () {
+      var isDark = document.documentElement.classList.toggle('dark');
+      try { localStorage.setItem('srh-theme', isDark ? 'dark' : 'light'); } catch (e) {}
+      syncThemeLabel();
+    });
+    applyLang(currentLang());
+    syncThemeLabel();
+  </script>
+</body>
+</html>

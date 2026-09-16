@@ -10,6 +10,8 @@ import { AgentsPage } from './pages/agents/AgentsPage'
 import { ContactPage } from './pages/contact/ContactPage'
 import { MaintenancePage } from './pages/maintenance/MaintenancePage'
 import { JoinPage } from './pages/join/JoinPage'
+import { VerifyPage } from './pages/verify/VerifyPage'
+import { IdGeneratorPage } from './pages/verify/IdGeneratorPage'
 
 export default function App() {
   return (
@@ -28,6 +30,9 @@ export default function App() {
         <Route path="/careers" element={<JoinPage />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Route>
+      {/* QR-only employee ID pages: standalone scene, no site header/footer */}
+      <Route path="/id" element={<IdGeneratorPage />} />
+      <Route path="/id/:token" element={<VerifyPage />} />
     </Routes>
   )
 }

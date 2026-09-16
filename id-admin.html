@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="/images/favicon.png" />
+  <title>Employee QR codes | SRH</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <script>
+    (function () {
+      var storedTheme = null;
+      try { storedTheme = localStorage.getItem('srh-theme'); } catch (e) {}
+      var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      var isDark = storedTheme ? storedTheme === 'dark' : prefersDark;
+      document.documentElement.classList.toggle('dark', isDark);
+      var storedLang = null;
+      try { storedLang = localStorage.getItem('srh-lang'); } catch (e) {}
+      var lang = storedLang === 'ar' ? 'ar' : 'en';
+      document.documentElement.lang = lang;
+      document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+    })();
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <style type="text/tailwindcss">
+    @custom-variant dark (&:where(.dark, .dark *));
+    @theme {
+      --color-navy-3: #4a5071;
+      --color-navy-4: #303451;
+      --color-navy-5: #151930;
+      --color-navy-6: #111426;
+      --color-navy-7: #0d0f1d;
+      --color-slate-0: #e6e7f1;
+      --color-slate-1: #c5c7d7;
+      --color-slate-2: #a3a7bd;
+      --color-slate-3: #8286a4;
+      --color-slate-4: #60668a;
+      --color-gold-3: #f1c588;
+      --color-gold-4: #ecb260;
+      --color-gold-5: #e79f38;
+      --color-gold-6: #b97f2d;
+      --font-sans: 'Poppins', sans-serif;
+      --font-heading: 'Poppins', sans-serif;
+    }
+    @font-face {
+      font-family: 'Poppins'; font-style: normal; font-weight: 400; font-display: swap;
+      src: url('/assets/fonts/poppins-400.woff2') format('woff2');
+    }
+    @font-face {
+      font-family: 'Poppins'; font-style: normal; font-weight: 500; font-display: swap;
+      src: url('/assets/fonts/poppins-500.woff2') format('woff2');
+    }
+    @font-face {
+      font-family: 'Poppins'; font-style: normal; font-weight: 600; font-display: swap;
+      src: url('/assets/fonts/poppins-600.woff2') format('woff2');
+    }
+    @font-face {
+      font-family: 'Poppins'; font-style: normal; font-weight: 700; font-display: swap;
+      src: url('/assets/fonts/poppins-700.woff2') format('woff2');
+    }
+    html[dir='rtl'] {
+      --font-sans: 'Readex Pro', 'Poppins', sans-serif;
+      --font-heading: 'Readex Pro', 'Poppins', sans-serif;
+    }
+    html[dir='rtl'] body, html[dir='rtl'] body * {
+      font-family: 'Readex Pro', 'Poppins', sans-serif !important;
+      letter-spacing: 0 !important;
+    }
+  </style>
+  <style>
+    .qr-box img, .qr-box canvas { display: block; width: 168px; height: 168px; }
+    .page-toast {
+      position: fixed; right: 24px; bottom: 24px; z-index: 80;
+      max-width: 340px; padding: 13px 18px; border-radius: 12px;
+      color: #fff; background: #151930;
+      box-shadow: 0 18px 38px rgba(0, 0, 0, 0.22);
+      opacity: 0; pointer-events: none; transform: translateY(8px);
+      transition: opacity .25s ease, transform .25s ease;
+      font-size: 14px;
+    }
+    .page-toast.is-visible { opacity: 1; transform: translateY(0); }
+    html[dir='rtl'] .page-toast { right: auto; left: 24px; }
+  </style>
+</head>
+<body class="bg-slate-0 font-sans text-navy-6 antialiased dark:bg-navy-7 dark:text-slate-1">
+  <div class="relative min-h-screen overflow-x-clip">
+    <!-- Backdrop decor -->
+    <div aria-hidden="true" class="pointer-events-none absolute inset-0">
+      <div class="absolute inset-x-0 top-0 h-72 bg-gradient-to-b from-navy-4/15 to-transparent dark:from-navy-4/60"></div>
+      <div class="absolute -top-24 start-1/2 h-72 w-[36rem] max-w-none -translate-x-1/2 rounded-full bg-gold-4/25 blur-3xl rtl:translate-x-1/2 dark:bg-gold-5/15"></div>
+      <div class="absolute -bottom-32 -start-24 h-80 w-80 rounded-full bg-navy-3/15 blur-3xl dark:bg-navy-4/70"></div>
+      <div class="absolute -bottom-32 -end-24 h-80 w-80 rounded-full bg-gold-4/15 blur-3xl dark:bg-navy-5/60"></div>
+    </div>
+
+    <!-- Full-width dark brand band -->
+    <div class="relative z-10 flex w-full justify-center bg-navy-6/85 py-4 backdrop-blur dark:bg-black/30">
+      <img
+        src="/assets/images/SRH-logo-optimized.webp"
+        alt="SRH — Safe Reach for Elevators"
+        class="h-16 w-auto object-contain drop-shadow-sm sm:h-20"
+        loading="eager"
+        decoding="async"
+      />
+    </div>
+
+    <div class="relative z-10 mx-auto flex w-full max-w-5xl flex-col items-center px-5 pb-12 pt-8 sm:pb-16 sm:pt-10">
+      <div class="flex w-full flex-col items-center justify-center pb-8 pt-4">
+        <div class="w-full text-center">
+          <p id="t-kicker" class="text-xs font-bold uppercase tracking-[0.3em] text-gold-6 dark:text-gold-3">Internal tool</p>
+          <h1 id="t-title" class="mt-2 font-heading text-3xl font-bold text-navy-6 dark:text-white sm:text-4xl">Employee QR codes</h1>
+          <p id="t-intro" class="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-slate-4 dark:text-slate-3">Print or save one QR code per employee badge. These pages are not linked from anywhere in the site — they open only via QR scan.</p>
+        </div>
+
+        <div id="cards" class="mt-10 grid w-full grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3"></div>
+      </div>
+
+      <!-- Footer controls + note -->
+      <div class="flex items-center justify-center gap-5">
+        <button
+          type="button"
+          id="langBtn"
+          aria-label="Switch language"
+          title="عربي"
+          class="text-[11px] font-bold tracking-wider text-slate-4/70 transition-colors hover:text-gold-6 dark:text-slate-3/70 dark:hover:text-gold-3"
+        >AR</button>
+        <button
+          type="button"
+          id="themeBtn"
+          aria-label="Switch to dark mode"
+          class="text-slate-4/70 transition-colors hover:text-gold-6 dark:text-slate-3/70 dark:hover:text-gold-3"
+        >
+          <svg id="iconMoon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+          </svg>
+          <svg id="iconSun" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:none">
+            <circle cx="12" cy="12" r="4" />
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
+          </svg>
+        </button>
+      </div>
+      <p class="mt-3 text-center text-[11px] font-medium tracking-wide text-slate-4/80 dark:text-slate-3/70" dir="ltr">srh-ksa.com</p>
+    </div>
+  </div>
+
+  <div id="toast" class="page-toast" role="status" aria-live="polite"></div>
+
+  <script>
+    var EMPLOYEES = [
+      { token: 'kX7mQ2vL9pR4tW8nZb3YnA', name: 'Eng. Ahmed Saqr', title: 'Chief Executive Officer', idNo: 'SRH-001' },
+      { token: 'dR5tY8uI3oP6aS9dF2gH1J', name: 'Eng. Hamada Kandil', title: 'Technical Director', idNo: 'SRH-002' },
+      { token: 'mN4bV6cX1zL8kJ7hG3fD5S', name: 'Mohammed Al-Qahtani', title: 'Installation Supervisor', idNo: 'SRH-003' }
+    ];
+    var STR = {
+      en: {
+        docTitle: 'Employee QR codes | SRH', kicker: 'Internal tool', title: 'Employee QR codes',
+        intro: 'Print or save one QR code per employee badge. These pages are not linked from anywhere in the site — they open only via QR scan.',
+        open: 'Open', copy: 'Copy link', download: 'Download PNG', copied: 'Link copied.',
+        langBtn: 'AR', langTitle: 'عربي',
+        themeToDark: 'Switch to dark mode', themeToLight: 'Switch to light mode'
+      },
+      ar: {
+        docTitle: 'رموز QR للموظفين | SRH', kicker: 'أداة داخلية', title: 'رموز QR للموظفين',
+        intro: 'اطبع أو احفظ رمز QR واحدًا لبطاقة كل موظف. هذه الصفحات غير مرتبطة من أي مكان في الموقع — وتُفتح فقط عبر مسح QR.',
+        open: 'فتح', copy: 'نسخ الرابط', download: 'تحميل PNG', copied: 'تم نسخ الرابط.',
+        langBtn: 'EN', langTitle: 'English',
+        themeToDark: 'التبديل إلى الوضع الداكن', themeToLight: 'التبديل إلى الوضع الفاتح'
+      }
+    };
+    var origin = window.location.origin;
+    var toastTimer = null;
+
+    function showToast(text) {
+      var el = document.getElementById('toast');
+      el.textContent = text;
+      el.classList.add('is-visible');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(function () { el.classList.remove('is-visible'); }, 3200);
+    }
+    function currentLang() { return document.documentElement.lang === 'ar' ? 'ar' : 'en'; }
+    function syncThemeLabel() {
+      var isDark = document.documentElement.classList.contains('dark');
+      var s = STR[currentLang()];
+      document.getElementById('iconMoon').style.display = isDark ? 'none' : '';
+      document.getElementById('iconSun').style.display = isDark ? '' : 'none';
+      document.getElementById('themeBtn').setAttribute('aria-label', isDark ? s.themeToLight : s.themeToDark);
+    }
+    function employeeUrl(token) { return origin + '/id/' + token; }
+
+    function renderCards() {
+      var s = STR[currentLang()];
+      var host = document.getElementById('cards');
+      host.innerHTML = '';
+      EMPLOYEES.forEach(function (employee) {
+        var url = employeeUrl(employee.token);
+        var card = document.createElement('div');
+        card.className = 'rounded-[1.75rem] bg-gradient-to-b from-gold-3/70 via-gold-5/25 to-navy-4/25 p-px shadow-xl shadow-navy-6/15 dark:shadow-black/40';
+        card.innerHTML =
+          '<div class="flex h-full flex-col rounded-[calc(1.75rem-1px)] bg-white p-5 dark:bg-navy-6">' +
+            '<div class="flex items-center justify-between gap-3">' +
+              '<div class="min-w-0">' +
+                '<h2 class="truncate font-heading text-base font-bold text-navy-6 dark:text-white">' + employee.name + '</h2>' +
+                '<p class="text-xs font-medium text-slate-4 dark:text-slate-3" dir="ltr">' + employee.idNo + ' · ' + employee.title + '</p>' +
+              '</div>' +
+              '<a href="/id/' + employee.token + '" class="shrink-0 rounded-full bg-navy-4 px-4 py-2 text-xs font-bold text-white transition-colors hover:bg-navy-5 dark:bg-gold-5 dark:text-navy-6 dark:hover:bg-gold-4">' + s.open + '</a>' +
+            '</div>' +
+            '<div id="qr-' + employee.token + '" class="qr-box mx-auto mt-4 rounded-2xl bg-white p-4 shadow-inner ring-1 ring-slate-0"></div>' +
+            '<p class="mt-3 truncate text-center text-[11px] font-medium text-slate-4 dark:text-slate-3" dir="ltr">' + url + '</p>' +
+            '<div class="mt-4 flex gap-2">' +
+              '<button type="button" data-copy="' + employee.token + '" class="flex-1 rounded-full border border-navy-4/25 px-3 py-2.5 text-xs font-bold text-navy-4 transition-colors hover:border-gold-5 hover:text-gold-6 dark:border-white/20 dark:text-gold-3 dark:hover:border-gold-4">' + s.copy + '</button>' +
+              '<button type="button" data-dl="' + employee.token + '" class="flex-1 rounded-full bg-gradient-to-l from-gold-4 to-gold-5 px-3 py-2.5 text-xs font-bold text-navy-6 transition-opacity hover:opacity-90">' + s.download + '</button>' +
+            '</div>' +
+          '</div>';
+        host.appendChild(card);
+        new QRCode(card.querySelector('#qr-' + CSS.escape(employee.token)), {
+          text: url, width: 168, height: 168,
+          colorDark: '#000000', colorLight: '#ffffff',
+          correctLevel: QRCode.CorrectLevel.M
+        });
+      });
+    }
+
+    function findEmployee(token) {
+      for (var i = 0; i < EMPLOYEES.length; i++) {
+        if (EMPLOYEES[i].token === token) return EMPLOYEES[i];
+      }
+      return null;
+    }
+
+    document.getElementById('cards').addEventListener('click', function (e) {
+      var copyBtn = e.target.closest('[data-copy]');
+      var dlBtn = e.target.closest('[data-dl]');
+      if (copyBtn) {
+        var url = employeeUrl(copyBtn.getAttribute('data-copy'));
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(url).then(
+            function () { showToast(STR[currentLang()].copied); },
+            function () { showToast(url); }
+          );
+        } else {
+          showToast(url);
+        }
+      }
+      if (dlBtn) {
+        var employee = findEmployee(dlBtn.getAttribute('data-dl'));
+        if (employee) downloadQrPng(employee);
+      }
+    });
+
+    function downloadQrPng(employee) {
+      var box = document.getElementById('qr-' + employee.token);
+      var src = box ? box.querySelector('canvas') : null;
+      if (!src) return;
+      var size = 512;
+      var canvas = document.createElement('canvas');
+      canvas.width = size; canvas.height = size;
+      var ctx = canvas.getContext('2d');
+      if (!ctx) return;
+      ctx.fillStyle = '#ffffff';
+      ctx.fillRect(0, 0, size, size);
+      ctx.drawImage(src, 0, 0, size, size);
+      var a = document.createElement('a');
+      a.download = 'srh-id-' + employee.idNo + '.png';
+      a.href = canvas.toDataURL('image/png');
+      a.click();
+    }
+
+    function applyLang(lang) {
+      var s = STR[lang];
+      document.documentElement.lang = lang;
+      document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+      document.title = s.docTitle;
+      document.getElementById('t-kicker').textContent = s.kicker;
+      document.getElementById('t-title').textContent = s.title;
+      document.getElementById('t-intro').textContent = s.intro;
+      var langBtn = document.getElementById('langBtn');
+      langBtn.textContent = s.langBtn;
+      langBtn.title = s.langTitle;
+      try { localStorage.setItem('srh-lang', lang); } catch (e) {}
+      renderCards();
+      syncThemeLabel();
+    }
+    document.getElementById('langBtn').addEventListener('click', function () {
+      applyLang(currentLang() === 'ar' ? 'en' : 'ar');
+    });
+    document.getElementById('themeBtn').addEventListener('click', function () {
+      var isDark = document.documentElement.classList.toggle('dark');
+      try { localStorage.setItem('srh-theme', isDark ? 'dark' : 'light'); } catch (e) {}
+      syncThemeLabel();
+    });
+    applyLang(currentLang());
+    syncThemeLabel();
+  </script>
+</body>
+</html>

@@ -652,6 +652,23 @@ export const translations: Record<Language, Dictionary> = {
     'joinPage.steps.3.desc': 'An in-depth interview with the department leadership to explore mutual fit and technical depth.',
     'joinPage.steps.4.title': '4. Welcome to the Team',
     'joinPage.steps.4.desc': 'Receiving your offer, seamless onboarding, and embarking on your journey with SRH.',
+
+    'verify.cardKicker': 'Employee ID',
+    'verify.verified': 'Verified',
+    'verify.backHome': 'Back to homepage',
+    'verify.idNo': 'Employee No.',
+    'verify.department': 'Department',
+    'verify.phone': 'Phone',
+    'verify.notFoundTitle': 'Badge not recognized',
+    'verify.notFoundText': 'This QR code does not match any employee record. Please check with HR.',
+
+    'idAdmin.kicker': 'Internal tool',
+    'idAdmin.title': 'Employee QR codes',
+    'idAdmin.intro': 'Print or save one QR code per employee badge. These pages are not linked from anywhere in the site — they open only via QR scan.',
+    'idAdmin.open': 'Open',
+    'idAdmin.copy': 'Copy link',
+    'idAdmin.download': 'Download PNG',
+    'idAdmin.copied': 'Link copied.',
   },
 
   ar: {
@@ -1295,5 +1312,22 @@ export const translations: Record<Language, Dictionary> = {
     'joinPage.steps.3.desc': 'لقاء مع قيادات القسم لمناقشة الجوانب الفنية والمهنية ومطابقة الكفاءة.',
     'joinPage.steps.4.title': '4. العرض والانضمام',
     'joinPage.steps.4.desc': 'تقديم عرض العمل التنافسي والترحيب بك كعضو جديد في أسرة الوصول الآمن.',
+
+    'verify.cardKicker': 'بطاقة موظف',
+    'verify.verified': 'معتمد',
+    'verify.backHome': 'العودة للرئيسية',
+    'verify.idNo': 'الرقم الوظيفي',
+    'verify.department': 'الإدارة',
+    'verify.phone': 'الهاتف',
+    'verify.notFoundTitle': 'البطاقة غير معروفة',
+    'verify.notFoundText': 'رمز QR هذا لا يطابق أي سجل موظف. يرجى مراجعة الموارد البشرية.',
+
+    'idAdmin.kicker': 'أداة داخلية',
+    'idAdmin.title': 'رموز QR للموظفين',
+    'idAdmin.intro': 'اطبع أو احفظ رمز QR واحدًا لبطاقة كل موظف. هذه الصفحات غير مرتبطة من أي مكان في الموقع — وتُفتح فقط عبر مسح QR.',
+    'idAdmin.open': 'فتح',
+    'idAdmin.copy': 'نسخ الرابط',
+    'idAdmin.download': 'تحميل PNG',
+    'idAdmin.copied': 'تم نسخ الرابط.',
   },
 }
